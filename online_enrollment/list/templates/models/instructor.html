@@ -1,10 +1,35 @@
 {% extends 'base/base.html' %}
+{% load static %}
 {% block title %} Instructor Model {% endblock %}
 
 {% block content %}
 
 <h1>Instructor</h1>
-<div class="hero">
+<div class="flex-container">
+    <div class="form-side">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Add</button>
+        </form>
+    </div>
+
+    <div class="data-side">
+        {% for x in instructor %}
+            <div class="data-card">
+                <h3>Instructor {{ forloop.counter }}</h3>
+                <p><b>Instructor ID:</b> {{ x.instructorID }}</p>
+                <p><b>Position:</b> {{ x.position }}</p>
+                <p><b>Course Teaching:</b> {{ x.courseTeaching }}</p>
+                <p><b>Hired Date:</b> {{ x.hiredDate }}</p>
+                <p><b>Office Location:</b> {{ x.officeLocation }}</p>
+            </div>
+        {% empty %}
+            <p>No instructors available.</p>
+        {% endfor %}
+    </div>
+</div>
+<!-- <div class="hero">
     {% for x in instructor %}
         <h3>Instructor {{forloop.counter}}</h3>
         <p>Instructor ID: {{ x.instructorID}}</p>
@@ -21,6 +46,6 @@
             <button type="submit">Add</button>
         </div>
     </form>
-</div>
+</div> -->
 
 {% endblock %}

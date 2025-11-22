@@ -1,9 +1,21 @@
-<div>
-    <div class="success-message">
-        <h3></h3>Enrollment Successful!</h3>
-        <p>The student has successfully enrolled in the system</p>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <title>Success</title>
+</head>
+<body>
+    <div class="success-container">
+        <div class="success-card">
+            <div class="success-message">
+                <h3>Enrollment Successful!</h3>
+                <p>The data has successfully added in the system.</p>
+            </div>
+            <a href="{% url 'student' %}" class="success-btn">Go Back</a>
+        </div>
     </div>
-    <div>
-        <a href="{% url 'dashboard' %}">Go Back</a>
-    </div>
-</div>
+</body>
+</html>

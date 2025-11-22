@@ -1,10 +1,37 @@
 {% extends 'base/base.html' %}
+{% load static %}
 {% block title %} Enrollment Model {% endblock %}
 
 {% block content %}
 
 <h1>Enrollment</h1>
-<div class="hero">
+<div class="flex-container">
+    <!-- Form on the left -->
+    <div class="form-side">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Add</button>
+        </form>
+    </div>
+
+    <!-- Data on the right -->
+    <div class="data-side">
+        {% for x in enrollment %}
+            <div class="data-card">
+                <h3>Enrollment {{ forloop.counter }}</h3>
+                <p><b>Enrollment ID:</b> {{ x.enrollmentID }}</p>
+                <p><b>Student ID:</b> {{ x.studentID }}</p>
+                <p><b>Course ID:</b> {{ x.courseID }}</p>
+                <p><b>Enrollment Deadline:</b> {{ x.enrollmentDL }}</p>
+                <p><b>Grade:</b> {{ x.grade }}</p>
+            </div>
+        {% empty %}
+            <p>No enrollments available.</p>
+        {% endfor %}
+    </div>
+</div>
+<!-- <div class="hero">
     {% for x in enrollment %}
         <h3>Enrollment {{forloop.counter}}</h3>
         <p>Enrollment ID: {{ x.enrollmentID}}</p>
@@ -21,6 +48,6 @@
             <button type="submit">Add</button>
         </div>
     </form>
-</div>
+</div> -->
 
 {% endblock %}

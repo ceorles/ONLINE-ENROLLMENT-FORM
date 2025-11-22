@@ -1,0 +1,181 @@
+/* ------------------------------
+   Base Styles
+------------------------------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #c1e1ff, #ffc1e3);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ------------------------------
+   Navigation Bar
+------------------------------ */
+nav {
+    background-color: #4a90e2;
+    padding: 1rem 2rem;
+    display: flex;
+    gap: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #ff6ec7;
+}
+
+/* ------------------------------
+   Main Content
+------------------------------ */
+main {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* ------------------------------
+   Headings
+------------------------------ */
+h1 {
+    color: #4a90e2;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    color: #ff6ec7;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ------------------------------
+   Hero / Cards
+------------------------------ */
+.hero {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.hero p {
+    margin-bottom: 0.5rem;
+}
+
+/* ------------------------------
+   Forms
+------------------------------ */
+form {
+    margin-top: 1rem;
+}
+
+form input,
+form select,
+form textarea,
+form button {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74,144,226,0.5);
+}
+
+form button {
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background-color: #ff6ec7;
+}
+
+/* ------------------------------
+   Links inside forms
+------------------------------ */
+form p a {
+    color: #4a90e2;
+    text-decoration: underline;
+}
+
+form p a:hover {
+    color: #ff6ec7;
+}
+
+/* ------------------------------
+   Success Message
+------------------------------ */
+.success-message {
+    background-color: #d4f1f9;
+    border-left: 5px solid #4a90e2;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.success-message h3 {
+    color: #4a90e2;
+    margin-bottom: 0.5rem;
+}
+
+.success-message p {
+    color: #333;
+}
+
+/* ------------------------------
+   Misc
+------------------------------ */
+hr {
+    border: none;
+    height: 1px;
+    background: #ccc;
+    margin: 2rem 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+div a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #fff;
+    background-color: #4a90e2;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+div a:hover {
+    background-color: #ff6ec7;
+}

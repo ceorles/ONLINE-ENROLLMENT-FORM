@@ -1,10 +1,35 @@
 {% extends 'base/base.html' %}
+{% load static %}
 {% block title %} Course Model {% endblock %}
 
 {% block content %}
 
 <h1>Course</h1>
-<div class="hero">
+<div class="flex-container">
+    <div class="form-side">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Add</button>
+        </form>
+    </div>
+
+    <div class="data-side">
+        {% for x in courses %}
+            <div class="data-card">
+                <h3>Course {{ forloop.counter }}</h3>
+                <p><b>Course ID:</b> {{ x.courseID }}</p>
+                <p><b>Course Code:</b> {{ x.courseCode }}</p>
+                <p><b>Prequisite:</b> {{ x.prequisite }}</p>
+                <p><b>Schedule:</b> {{ x.schedule }}</p>
+                <p><b>Max Students:</b> {{ x.maxStudents }}</p>
+            </div>
+        {% empty %}
+            <p>No courses available.</p>
+        {% endfor %}
+    </div>
+</div>
+<!-- <div class="hero">
     {% for x in courses %}
         <h3>Course {{forloop.counter}}</h3>
         <p>Course ID: {{ x.courseID}}</p>
@@ -21,6 +46,6 @@
             <button type="submit">Add</button>
         </div>
     </form>
-</div>
+</div> -->
 
 {% endblock %}
