@@ -1,0 +1,26 @@
+{% extends 'base/base.html' %}
+{% block title %} Course Model {% endblock %}
+
+{% block content %}
+
+<h1>Course</h1>
+<div class="hero">
+    {% for x in courses %}
+        <h3>Course {{forloop.counter}}</h3>
+        <p>Course ID: {{ x.courseID}}</p>
+        <p>Course Code: {{ x.courseCode}}</p>
+        <p>Prequisite: {{ x.prequisite}}</p>
+        <p>Schedule: {{ x.schedule}}</p>
+        <p>Max Students: {{ x.maxStudents}}</p>
+    {% endfor %}
+    <hr>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <div>
+            <button type="submit">Add</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

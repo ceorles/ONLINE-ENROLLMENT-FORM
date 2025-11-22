@@ -1,0 +1,26 @@
+{% extends 'base/base.html' %}
+{% block title %} Enrollment Model {% endblock %}
+
+{% block content %}
+
+<h1>Enrollment</h1>
+<div class="hero">
+    {% for x in enrollment %}
+        <h3>Enrollment {{forloop.counter}}</h3>
+        <p>Enrollment ID: {{ x.enrollmentID}}</p>
+        <p>Student ID: {{ x.studentID}}</p>
+        <p>Course ID: {{ x.courseID}}</p>
+        <p>Enrollment Deadline: {{ x.enrollmentDL}}</p>
+        <p>Grade: {{ x.grade}}</p>
+    {% endfor %}
+    <hr>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <div>
+            <button type="submit">Add</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base/base.html' %}
+{% block title %} Instructor Model {% endblock %}
+
+{% block content %}
+
+<h1>Instructor</h1>
+<div class="hero">
+    {% for x in instructor %}
+        <h3>Instructor {{forloop.counter}}</h3>
+        <p>Instructor ID: {{ x.instructorID}}</p>
+        <p>Position: {{ x.position}}</p>
+        <p>Course Teaching: {{ x.courseTeaching}}</p>
+        <p>Hired Date: {{ x.hiredDate}}</p>
+        <p>Office Location: {{ x.officeLocation}}</p>
+    {% endfor %}
+    <hr>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <div>
+            <button type="submit">Add</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
